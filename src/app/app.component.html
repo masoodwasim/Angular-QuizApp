@@ -1,0 +1,19 @@
+<div [hidden]="!isWelcomeScreen">
+
+<div class="container color-dark" >
+  General Knowledge Quiz App
+		</div>
+    <div class="container color-light">
+		 <p> Test your General Knowledge with our GK Quiz, the test currently contains 5 questions. You will get 1 point for each
+			correct answer. At the end of the Quiz, your total score will be displayed. Maximum score is 5 points. If you don't get
+			the full score, you'll have an option to try again.</p>
+			<p class="sm">
+				Start the quiz now by clicking on the button below.</p>
+	 
+		<button (click)="startTest()" class="btn">Start the Quiz </button> 
+    </div>
+   
+</div>
+  <div [hidden]="!isQuestionCardShow">
+      <router-outlet></router-outlet>
+  </div>

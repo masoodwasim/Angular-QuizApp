@@ -1,0 +1,22 @@
+<!-- Optional - Here we display the answers -->
+<div class="container color-dark" >
+  Your Scoreboard - {{ (rightAnswer1) }} Points
+</div>
+<div class="container color-light">
+<ng-container *ngFor="let answer of quiz.answers; let i = index;">
+  <b>Question : {{ answer.question }}</b><br>
+  <i>Answer : {{ answer.answer }}</i><br>
+  <p></p>
+</ng-container>
+
+
+ <br/>
+<div *ngIf="rightAnswer1>0">
+  Total Score : {{ (rightAnswer1) }} Points
+</div>
+<div *ngIf="rightAnswer1<=0">
+  Sorry! You have not answered any correct answer. Please try again.
+</div>
+<p></p>
+<button routerLink="./hello" (click)="gotoBack()" class="btn">Start the Quiz over</button>
+</div>

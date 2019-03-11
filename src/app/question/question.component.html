@@ -1,0 +1,12 @@
+
+<!-- Display the current question -->
+<div class="container color-dark" >
+<h4>{{ question?.question }}</h4>
+</div>
+<div class="container color-light">
+<form novalidate [formGroup]="form">
+	<ng-container *ngFor="let answer of question?.answers">
+		<input type="radio" formControlName="answer" name="answer" [value]="answer" (click)="quiz.validate(answer); router.navigate(['/question', quiz.questionId + 1])"> {{ answer }}<br/>
+	</ng-container>
+</form>
+</div>
